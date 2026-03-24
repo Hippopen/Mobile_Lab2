@@ -21,10 +21,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.util.Locale
-
-// --- Yêu cầu bắt buộc 2: Khai báo biến constant ở vị trí dễ thấy nhất ---
-const val GEMINI_API_KEY = "AIzaSyCvDCSYsHHxRD3S2DXFSPJWIepeZxzm_jA"
-
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -34,7 +30,7 @@ class MainActivity : AppCompatActivity() {
     // Khởi tạo Gemini Model - Yêu cầu bắt buộc 1: gemini-2.5-flash
     private val generativeModel = GenerativeModel(
         modelName = "gemini-2.5-flash",
-        apiKey = GEMINI_API_KEY
+        apiKey = BuildConfig.GEMINI_API_KEY
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
